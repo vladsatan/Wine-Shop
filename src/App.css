@@ -17,3 +17,28 @@ body {
   margin: 0 auto;
   background-color: #1B1918;
 }
+
+.main-container {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 0 45px;
+  min-height: 1000px;
+  /* border: 1px solid red; */
+}
+
+.filter-side {
+  width: 20%;
+  min-height: 700px;
+  /* border: 1px solid yellow; */
+}
+
+.item-side {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 1000px;
+  /* border: 1px solid blue; */
+}
