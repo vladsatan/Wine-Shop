@@ -2,14 +2,24 @@ import React from 'react';
 import "./Filter.css";
 import FilterBox from './FilterBox';
 
-const Filter = () => {
+const Filter = (props) => {
+
+    let {chooseColor,setChooseColor,chooseSweetness,setChooseSweetness,choosePrice,setChoosePrise,chooseCountry,setChooseCountry,chooseSort,setChooseSort,chooseClassification,setChooseClassification} = props
+
+    let objColor = {topicName: 'Цвет', pointsArray:[{pointName: 'Белое',key: 1,quantity: 9},{pointName: 'Красное', key: 2, quantity: 21},{pointName: 'Розовое', key: 3,quantity: 13},{pointName: 'Все', key: 4, quantity: 100}]};
+    let objSweetness = {topicName: 'Сладость', pointsArray:[{pointName: 'Полусладкое', key: 5,quantity: 9},{pointName: 'Полусухое', key: 6,quantity: 21},{pointName: 'Сухое', key: 7,quantity: 13},{pointName: 'Сладкое', key: 8, quantity: 9}]}
+    let objPrice = {topicName: 'Цена', pointsArray:[{pointName: '0-1000', key: 9,quantity: 9},{pointName: '1000-2000', key: 10,quantity: 21},{pointName: '2000-3000', key: 11,quantity: 13},{pointName: '3000-4000', key: 12 ,quantity: 9},{pointName: '4000-5000', key: 13 ,quantity: 9},{pointName: '5000-6000', key: 14 ,quantity: 1},{pointName: '6000+', key: 15 ,quantity: 2}]}
+    let objCountry = {topicName: 'Страна', pointsArray:[{pointName: 'Австралия', key: 16 ,quantity: 9},{pointName: 'Австрия', key: 17 ,quantity: 21},{pointName: 'Аргентина', key: 18 ,quantity: 13},{pointName: 'Германия', key: 19,quantity: 9},{pointName: 'Италия', key: 20,quantity: 9},{pointName: 'Франция', key: 21,quantity: 1},{pointName: 'Португалия', key: 22,quantity: 2},{pointName: 'Чили', key: 23,quantity: 9}]}
+    let objGrapeSorts = {topicName: 'Сорт винограда', pointsArray:[{pointName: 'Верментино', key: 24,quantity: 9},{pointName: 'Каберне Совиньон', key: 25,quantity: 21},{pointName: 'Каберне Фран', key: 26,quantity: 13},{pointName: 'Мерло',key: 27,quantity: 9},{pointName: 'Пину Нуар', key: 28,quantity: 9},{pointName: 'Совиньон Блан', key: 29,quantity: 1},{pointName: 'Шардоне', key: 30,quantity: 2},{pointName: 'Корвиноне', key: 31,quantity: 9}]}
+    let objClassification = {topicName: 'Классификация', pointsArray:[{pointName: 'Игристое вино', key: 32,quantity: 9},{pointName: 'Ледяное вино', key: 33,quantity: 21},{pointName: 'Портвейн', key: 34,quantity: 13},{pointName: 'Тихое вино', key: 35,quantity: 100},{pointName: 'Херес', key: 36,quantity: 13}]}
     return (
         <div className='filter-container'>
-            <FilterBox obj={{topicName: 'Цвет', pointsArray:[{pointName: 'Белое', pointValue: 'whiteWine',quantity: 9},{pointName: 'Красное', pointValue: 'redWine',quantity: 21},{pointName: 'Розовое', pointValue: 'pink',quantity: 13},{pointName: 'Все', pointValue: 'All',quantity: 100}]}} />
-            <FilterBox obj={{topicName: 'Сладость', pointsArray:[{pointName: 'Полусладкое', pointValue: 'semi-sweet',quantity: 9},{pointName: 'Полусухое', pointValue: 'Semi-dry',quantity: 21},{pointName: 'Сухое', pointValue: 'dry',quantity: 13},{pointName: 'Сладкое', pointValue: 'sweet',quantity: 9}]}} />
-            <FilterBox obj={{topicName: 'Цена', pointsArray:[{pointName: '0-1000', pointValue: '1000',quantity: 9},{pointName: '1000-2000', pointValue: '2000',quantity: 21},{pointName: '2000-3000', pointValue: '3000',quantity: 13},{pointName: '3000-4000', pointValue: '4000',quantity: 9},{pointName: '4000-5000', pointValue: '5000',quantity: 9},{pointName: '5000-6000', pointValue: '6000',quantity: 1},{pointName: '6000+', pointValue: '6001',quantity: 2}]}} />
-            <FilterBox obj={{topicName: 'Регион', pointsArray:[{pointName: 'Австралия', pointValue: 'Australia',quantity: 9},{pointName: 'Австрия', pointValue: 'Austria',quantity: 21},{pointName: 'Аргентина', pointValue: 'Argentina',quantity: 13},{pointName: 'Германия', pointValue: 'Germany',quantity: 9},{pointName: 'Италия', pointValue: 'Italy',quantity: 9},{pointName: 'Франция', pointValue: 'France',quantity: 1},{pointName: 'Португалия', pointValue: 'Portugal',quantity: 2},{pointName: 'Чили', pointValue: 'Chile',quantity: 9}]}} />
-            <FilterBox obj={{topicName: 'Сорт винограда', pointsArray:[{pointName: 'Верментино', pointValue: 'Vermentino',quantity: 9},{pointName: 'Каберне Совиньон', pointValue: 'Cabernet Sauvignon',quantity: 21},{pointName: 'Каберне Фран', pointValue: 'Cabernet Franc',quantity: 13},{pointName: 'Мерло', pointValue: 'Merlot',quantity: 9},{pointName: 'Пину Нуар', pointValue: 'pinu noir',quantity: 9},{pointName: 'Совиньон Блан', pointValue: 'Sauvignon Blanc',quantity: 1},{pointName: 'Шардоне', pointValue: 'Chardonnay',quantity: 2},{pointName: 'Корвиноне', pointValue: 'Corvinone',quantity: 9}]}} />
+            <FilterBox obj={objColor} choose={chooseColor} setChoose={setChooseColor}/>
+            <FilterBox obj={objSweetness} choose={chooseSweetness} setChoose={setChooseSweetness}/>
+            <FilterBox obj={objPrice} choose={choosePrice} setChoose={setChoosePrise} />
+            <FilterBox obj={objCountry} choose={chooseCountry} setChoose={setChooseCountry}/>
+            <FilterBox obj={objGrapeSorts} choose={chooseSort} setChoose={setChooseSort}/>
+            <FilterBox obj={objClassification} choose={chooseClassification} setChoose={setChooseClassification} />
         </div>
     );
 }

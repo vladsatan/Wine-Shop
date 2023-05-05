@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./ProductCard.css";
+import {getDecorationPrice} from "../../Scripts";
 
 const ProductCard = (props) => {
 
     const {productCardInfo} = props;
-    let {name, photo, year, volume, producer, price, flag} = productCardInfo;
+    let [decorPrice,setDecorPrice] = useState(null)
+    let {name, photo, year, volume, country, price, flag, area} = productCardInfo;
+
+    useEffect(()=>{
+        setDecorPrice(()=> getDecorationPrice(price))
+    },[])
 
     return (
         <div className='ProductCard'>
@@ -13,12 +19,12 @@ const ProductCard = (props) => {
             <p className='card-year'>{year}/{volume}</p>
             <div className='flex-producer'>
             <img src={flag} alt='' />
-            <p>{producer}</p>
+            <p>{country}/{area}</p>
             </div>
             <div className='flex-price'>
                <div className='price_quantity'>
                 <p className='quantity'>ЦЕНА ЗА 1 ШТ</p>
-                <p className='price'>{price} ГРН</p>
+                <p className='price'>{decorPrice} ГРН</p>
                </div>
                <button>В КОРЗИНУ</button>
             </div>
