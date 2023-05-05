@@ -36,9 +36,36 @@ body {
 
 .item-side {
   width: 75%;
+}
+
+.items-box {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  min-height: 1000px;
-  /* border: 1px solid blue; */
+  /*min-height: 1000px;*/
+}
+
+.see-all {
+  display: flex;
+  padding: 0px 50px;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 125px;
+}
+
+.see-all img {
+  width: 46px;
+  height: 1px;
+  margin-left: 40px;
+}
+
+.see-all p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.5em;
+  color: #FFFFFF;
+  text-transform: uppercase;
 }
