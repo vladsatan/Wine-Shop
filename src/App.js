@@ -8,6 +8,8 @@ import Line from './img/Line.png';
 import wines from './bdTest';
 import {useEffect, useState} from "react";
 import {getFilterOfColors} from "./Scripts";
+import AboutSommelier from "./Components/AboutSommelier/AboutSommelier";
+import MailingList from "./Components/ MailingList/ MailingList";
 
 function App() {
 
@@ -32,7 +34,6 @@ function App() {
                 arr.push(filterWine[i])
             }
         }
-        console.log(arr)
         setLimitWine(arr)
     },[limiter,filterWine])
 
@@ -75,6 +76,9 @@ function App() {
 
              </div>
           </div>
+
+           <AboutSommelier />
+           <MailingList />
        </div>
     </div>
   );
