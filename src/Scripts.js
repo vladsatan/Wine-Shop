@@ -1,7 +1,7 @@
 
 // Скрипт для открытия первых трех фильтров
 export default function openFirstPoints(name, fun){
-    if(name === 'Цена' || name === 'Цвет' || name === 'Сладость'){
+    if(name === 'Цена' || name === 'Цвет' || name === 'Сладость' || name === 'Тип игристого'){
         fun(true);
     }
 }
@@ -31,7 +31,7 @@ export function getDecorationPrice(price){
 }
 
 // Скрипт для фильтрации по масивам (Цвет, Сладость и тд)
-export function getFilterOfColors(colorArray, sweetnessArray,priceArray,countryArray, sortArray, classificationArray, dataArray){
+export function getFilterOfOptions(colorArray, sweetnessArray,priceArray,countryArray, sortArray, classificationArray, kindOfSparklingArray, dataArray){
 
     let arr = [];
 
@@ -75,8 +75,17 @@ export function getFilterOfColors(colorArray, sweetnessArray,priceArray,countryA
                 for (let j = 0; j < arrNum.length; j++){
                     fullArrayNum.push(arrNum[j])
                 }
-                if(Number(fullArrayNum[0]) <= e.price && e.price <= (Number(fullArrayNum[0]) + 1000)){
-                    return e
+
+                if(fullArrayNum[0] >= 0 && fullArrayNum[1] > 0){
+                    if(Number(fullArrayNum[0]) <= e.price && e.price <= (Number(fullArrayNum[1]))){
+                        return e
+                    }
+                }
+
+                else if(Number(fullArrayNum[1]) === 0){
+                    if(Number(fullArrayNum[0]) <= e.price){
+                        return e
+                    }
                 }
             }
         })
@@ -134,6 +143,58 @@ export function getFilterOfColors(colorArray, sweetnessArray,priceArray,countryA
         }
     }
 
+    //7
+
+    if(kindOfSparklingArray.length > 0){
+        arr =  arr.filter(e=>{
+            for(let i = 0; i < kindOfSparklingArray.length; i++){
+                if(kindOfSparklingArray[i] === e.kindOfSparkling){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0 && classificationArray.length === 0){
+            arr = dataArray
+        }
+    }
+
     return arr;
 
+}
+
+export function drinkTranslation(drink,fun){
+
+    switch (drink){
+        case 'Вино':
+            fun('wine')
+            break;
+        case 'Игристое':
+            fun('sparkling')
+            break;
+        case 'Виски':
+            fun('whisky')
+            break;
+        case 'Коньяк':
+            fun('brandy')
+            break;
+        case 'Арманьяк':
+            fun('armagnac')
+            break;
+        case 'Ром':
+            fun('rum')
+            break;
+        case 'Водка':
+            fun('vodka')
+            break;
+        case 'Ликер':
+            fun('liquor')
+            break;
+        case 'Коктейли':
+            fun('cocktails')
+            break;
+        case 'Деликатесы':
+            fun('delicacies')
+            break;
+    }
 }

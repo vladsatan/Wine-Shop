@@ -9,7 +9,8 @@ const FilterBox = (props) => {
     let {topicName,pointsArray} = obj;
 
     const [isOpen, setIsOpen] = useState(false);
-    // const [choose,setChoose] = useState([])
+    const [priceFrom, setPriceFrom] = useState(0);
+    const [priceTo, setPriceTo] = useState(0);
 
     useEffect(() => {
         openFirstPoints(topicName,setIsOpen);
@@ -29,10 +30,18 @@ const FilterBox = (props) => {
 
     }
 
-     useEffect(()=>{
-         // console.log(choose)
+     const handleSetPriceFrom = (event) =>{
+         setPriceFrom(event.target.value)
+     }
 
-     },[choose])
+     const handleSetPriceTo = (event) =>{
+         setPriceTo(event.target.value)
+     }
+
+     const customPriceBtn = () =>{
+        let stringPrice = `${priceFrom}-${priceTo}`
+         setChoose([stringPrice])
+     }
 
     return (
         <div className='FilterBox-container'>
@@ -44,9 +53,9 @@ const FilterBox = (props) => {
             {topicName === 'Цена'? 
             
             <div className='priceInputFlex'>
-               <input type='text' className='price-input' placeholder='от'></input>
-               <input type='text' className='price-input price-input_2' placeholder='до'></input>
-               <button>OK</button>
+               <input type='text' className='price-input' placeholder='от' onChange={(e)=>handleSetPriceFrom(e)}></input>
+               <input type='text' className='price-input price-input_2' placeholder='до' onChange={(e)=>handleSetPriceTo(e)}></input>
+               <button onClick={()=>customPriceBtn()}>OK</button>
             </div> 
             
             : null}

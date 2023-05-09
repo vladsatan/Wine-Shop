@@ -76,7 +76,7 @@ nav {
 }
 
 .account-info {
-    padding: 0px 12px;
+    padding: 0 12px;
 }
 
 .account-info p {
@@ -87,7 +87,7 @@ nav {
 }
 
 .contacts-info {
-    padding: 0px 12px;
+    padding: 0 12px;
 }
 
 .contacts-info a{
@@ -119,7 +119,7 @@ nav {
 }
 
 .basket {
-    padding: 0px 12px;
+    padding: 0 12px;
 }
 
 .basket-href {
@@ -139,25 +139,43 @@ nav {
 }
 
 .nav-bar {
-    padding: 11px 45px;
+    padding: 0 45px;
     background-color: #1B1918;
+    display: flex;
 }
 
-.nav-bar a {
+.nav-bar-bg {
+    padding: 11px 20px;
+    background-color: #0c0c0c;
+}
+
+.nav-bar-noBg {
+    padding: 11px 20px;
+}
+
+.nav-bar-false {
     text-decoration: none;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
-    margin-right: 40px;
     transition: .2s;
 }
 
-.nav-bar a:hover {
+.nav-bar-true {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: .2s;
+    color: #7a0000;
+}
+
+.nav-bar-false:hover {
     color: #9a9a9a;
 }
 
 .space {
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 .space2 {

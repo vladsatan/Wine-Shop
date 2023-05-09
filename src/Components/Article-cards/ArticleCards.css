@@ -4,6 +4,7 @@
     justify-content: space-between;
     margin-top: 5px;
     margin-bottom: 75px;
+    position: relative;
 }
 
 .ArticleCards a img {
