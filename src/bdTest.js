@@ -758,7 +758,7 @@ export const whisky = [
         id: 18,
         name: 'L’ERMITE HERMITAGE 18',
         typeOfWhisky: 'Односолодовый',
-        agingPeriod: '10 Year Old',
+        agingPeriod: '> 20 Year Old',
         bottler: 'Gordon & MacPhail',
         country: 'Франция',
         area: 'm.chapoutier',

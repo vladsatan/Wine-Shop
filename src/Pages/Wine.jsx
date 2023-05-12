@@ -22,16 +22,18 @@ function Wine() {
    let [limitWine, setLimitWine] = useState([])
 
    useEffect(()=>{
-      setFilterWine(getFilterOfOptions(chooseColor,chooseSweetness,choosePrice,chooseCountry,chooseSort,chooseClassification,[],wines))
+      setFilterWine(getFilterOfOptions(chooseColor,chooseSweetness,choosePrice,chooseCountry,chooseSort,chooseClassification,[],[],[],[],wines))
    },[chooseColor,chooseSweetness,choosePrice,chooseCountry,chooseSort,chooseClassification])
 
    useEffect(()=>{
-      let arr = []
-      for(let i = 0; i < filterWine.length; i++){
-         if(i < limiter){
-            arr.push(filterWine[i])
+      let arr = [];
+
+    for(let i = 0; i < filterWine.length; i++){
+        if(i < limiter){
+         arr.push(filterWine[i])
          }
       }
+
       setLimitWine(arr)
    },[limiter,filterWine])
 

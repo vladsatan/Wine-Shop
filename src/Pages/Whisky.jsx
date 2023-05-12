@@ -21,7 +21,6 @@ const Whisky = () => {
 
     useEffect(()=>{
         setFilterWhisky(getFilterOfOptions([],[],choosePrice,chooseCountry,[],[],[],chooseKindOfWhisky,chooseAgingPeriod,chooseBottler,whisky))
-        console.log(chooseAgingPeriod)
     },[chooseKindOfWhisky,chooseAgingPeriod,choosePrice,chooseCountry,chooseBottler])
 
     useEffect(()=>{

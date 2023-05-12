@@ -2,12 +2,13 @@ import '../App.css';
 import React, {useEffect, useState} from "react";
 import Slider from "../Components/Slider/Slider";
 import ArticleCards from "../Components/Article-cards/ArticleCards";
-import AboutSommelier from "../Components/AboutSommelier/AboutSommelier";;
+import AboutSommelier from "../Components/AboutSommelier/AboutSommelier";
 import Filter from "../Components/Filters/Filter";
 import ProductCard from "../Components/ProductCard/ProductCard";
 import Line from "../img/Line.png";
 import {sparkling} from "../bdTest";
 import {getFilterOfOptions} from "../Scripts";
+
 function Sparkling() {
 
     const [chooseColor, setChooseColor] = useState([])
@@ -21,7 +22,7 @@ function Sparkling() {
     let [limitSparkling, setLimitSparkling] = useState([])
 
     useEffect(()=>{
-        setFilterSparkling(getFilterOfOptions(chooseColor,chooseSweetness,choosePrice,chooseCountry,chooseSort,[],chooseKindOfSparkling,sparkling))
+        setFilterSparkling(getFilterOfOptions(chooseColor,chooseSweetness,choosePrice,chooseCountry,chooseSort,[],chooseKindOfSparkling,[],[],[],sparkling))
     },[chooseColor,chooseSweetness,choosePrice,chooseCountry,chooseSort,chooseKindOfSparkling])
 
     useEffect(()=>{

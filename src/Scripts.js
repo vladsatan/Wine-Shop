@@ -49,115 +49,170 @@ export function getFilterOfOptions(colorArray, sweetnessArray,priceArray,country
         arr = dataArray
     }
 
-    // //2
-    //
-    // if(sweetnessArray.length > 0){
-    //     arr = arr.filter(e=>{
-    //         for(let i = 0; i < sweetnessArray.length; i++){
-    //             if(sweetnessArray[i] === e.sweetness){
-    //                 return e
-    //             }
-    //         }
-    //     })
-    // }else{
-    //     if(colorArray.length === 0){
-    //         arr = dataArray
-    //     }
-    // }
-    //
-    // //3
-    //
-    // if (priceArray.length > 0) {
-    //     let fullArrayNum = []
-    //     arr = arr.filter(e => {
-    //         for (let i = 0; i < priceArray.length; i++) {
-    //             let arrNum = priceArray[i].split('-')
-    //             for (let j = 0; j < arrNum.length; j++){
-    //                 fullArrayNum.push(arrNum[j])
-    //             }
-    //
-    //             if(fullArrayNum[0] >= 0 && fullArrayNum[1] > 0){
-    //                 if(Number(fullArrayNum[0]) <= e.price && e.price <= (Number(fullArrayNum[1]))){
-    //                     return e
-    //                 }
-    //             }
-    //
-    //             else if(Number(fullArrayNum[1]) === 0){
-    //                 if(Number(fullArrayNum[0]) <= e.price){
-    //                     return e
-    //                 }
-    //             }
-    //         }
-    //     })
-    // }else{
-    //     if(colorArray.length === 0 && sweetnessArray.length === 0){
-    //         arr = dataArray
-    //     }
-    // }
-    //
-    // //4
-    //
-    // if(countryArray.length > 0){
-    //     arr =  arr.filter(e=>{
-    //         for(let i = 0; i < countryArray.length; i++){
-    //             if(countryArray[i] === e.country){
-    //                 return e
-    //             }
-    //         }
-    //     })
-    // }else{
-    //     if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0){
-    //         arr = dataArray
-    //     }
-    // }
-    //
-    // //5
-    //
-    // if(sortArray.length > 0){
-    //     arr =  arr.filter(e=>{
-    //         for(let i = 0; i < sortArray.length; i++){
-    //             if(sortArray[i] === e.grapeSort){
-    //                 return e
-    //             }
-    //         }
-    //     })
-    // }else{
-    //     if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0){
-    //         arr = dataArray
-    //     }
-    // }
-    //
-    // //6
-    //
-    // if(classificationArray.length > 0){
-    //     arr =  arr.filter(e=>{
-    //         for(let i = 0; i < classificationArray.length; i++){
-    //             if(classificationArray[i] === e.classification){
-    //                 return e
-    //             }
-    //         }
-    //     })
-    // }else{
-    //     if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0){
-    //         arr = dataArray
-    //     }
-    // }
-    //
-    // //7
-    //
-    // if(kindOfSparklingArray.length > 0){
-    //     arr =  arr.filter(e=>{
-    //         for(let i = 0; i < kindOfSparklingArray.length; i++){
-    //             if(kindOfSparklingArray[i] === e.kindOfSparkling){
-    //                 return e
-    //             }
-    //         }
-    //     })
-    // }else{
-    //     if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0 && classificationArray.length === 0){
-    //         arr = dataArray
-    //     }
-    // }
+    //2
+
+    if(sweetnessArray.length > 0){
+        arr = arr.filter(e=>{
+            for(let i = 0; i < sweetnessArray.length; i++){
+                if(sweetnessArray[i] === e.sweetness){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //3
+
+    if (priceArray.length > 0) {
+        let fullArrayNum = []
+        arr = arr.filter(e => {
+            for (let i = 0; i < priceArray.length; i++) {
+                let arrNum = priceArray[i].split('-')
+                for (let j = 0; j < arrNum.length; j++){
+                    fullArrayNum.push(arrNum[j])
+                }
+
+                if(fullArrayNum[0] >= 0 && fullArrayNum[1] > 0){
+                    if(Number(fullArrayNum[0]) <= e.price && e.price <= (Number(fullArrayNum[1]))){
+                        return e
+                    }
+                }
+
+                else if(Number(fullArrayNum[1]) === 0){
+                    if(Number(fullArrayNum[0]) <= e.price){
+                        return e
+                    }
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //4
+
+    if(countryArray.length > 0){
+        arr =  arr.filter(e=>{
+            for(let i = 0; i < countryArray.length; i++){
+                if(countryArray[i] === e.country){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //5
+
+    if(sortArray.length > 0){
+        arr =  arr.filter(e=>{
+            for(let i = 0; i < sortArray.length; i++){
+                if(sortArray[i] === e.grapeSort){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //6
+
+    if(classificationArray.length > 0){
+        arr =  arr.filter(e=>{
+            for(let i = 0; i < classificationArray.length; i++){
+                if(classificationArray[i] === e.classification){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //7
+
+    if(kindOfSparklingArray.length > 0){
+        arr =  arr.filter(e=>{
+            for(let i = 0; i < kindOfSparklingArray.length; i++){
+                if(kindOfSparklingArray[i] === e.kindOfSparkling){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0 && classificationArray.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //8
+
+    if(chooseKindOfWhisky.length > 0){
+        arr =  arr.filter(e=>{
+            for(let i = 0; i < chooseKindOfWhisky.length; i++){
+                if(chooseKindOfWhisky[i] === e.typeOfWhisky){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0 && classificationArray.length === 0 && kindOfSparklingArray.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //9
+
+    if(chooseAgingPeriod.length > 0){
+        arr = arr.filter(e =>{
+            for(let i = 0; i < chooseAgingPeriod.length; i++){
+                if(chooseAgingPeriod[i] === e.agingPeriod){
+                    return e
+                }
+                if(chooseAgingPeriod[i][0] === '>'){
+                    if(e.agingPeriod > 20){
+                        return e
+                    }
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0 && classificationArray.length === 0 && kindOfSparklingArray.length === 0 && chooseKindOfWhisky.length === 0){
+            arr = dataArray
+        }
+    }
+
+    //10
+
+    if(chooseBottler.length > 0){
+        arr =  arr.filter(e=>{
+            for(let i = 0; i < chooseBottler.length; i++){
+                if(chooseBottler[i] === e.bottler){
+                    return e
+                }
+            }
+        })
+    }else{
+        if(colorArray.length === 0 && sweetnessArray.length === 0 && priceArray.length === 0 && countryArray.length === 0 && sortArray.length === 0 && classificationArray.length === 0 && kindOfSparklingArray.length === 0 && chooseKindOfWhisky.length === 0 && chooseAgingPeriod.length === 0){
+            arr = dataArray
+        }
+    }
+
+
 
     return arr;
 
