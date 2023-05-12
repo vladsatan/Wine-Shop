@@ -4,10 +4,11 @@ import logo from "../../img/Logo.png";
 import searchLogo from "../../img/SearchLogo.png";
 import locationLogo  from "../../img/location-logo.png";
 import ExpressDelivery from "../Express-delivery/Express_delivery"
+import {Link, Outlet} from "react-router-dom";
 
 const Navbar = (props) => {
 
-    let {drink, setDrink} = props;
+    let {drink, setDrink, page} = props;
 
     return (
         <nav>
@@ -60,16 +61,18 @@ const Navbar = (props) => {
             </div>
 
             <div className='nav-bar'>
-            <div className={drink === 'Вино'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Вино'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Вино')}>Вино</a></div>
-            <div className={drink === 'Игристое'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Игристое'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Игристое')}>Игристое</a></div>
-            <div className={drink === 'Виски'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Виски'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Виски')}>Виски</a></div>
-            <div className={drink === 'Коньяк'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Коньяк'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Коньяк')}>Коньяк</a></div>
-            <div className={drink === 'Арманьяк'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Арманьяк'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Арманьяк')}>Арманьяк</a></div>
-            <div className={drink === 'Ром'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Ром'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Ром')}>Ром</a></div>
-            <div className={drink === 'Водка'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Водка'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Водка')}>Водка</a></div>
-            <div className={drink === 'Ликер'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Ликер'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Ликер')}>Ликер</a></div>
-            <div className={drink === 'Коктейли'? 'nav-bar-bg':'nav-bar-noBg'}><a className={drink === 'Коктейли'? 'nav-bar-true':'nav-bar-false'} href='#' onClick={()=>setDrink('Коктейли')}>Коктейли</a></div>
+            <div className={page.pathname === '/'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/' className={page.pathname === '/'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Вино')}>Вино</Link></div>
+            <div className={page.pathname === '/Sparkling'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/Sparkling' className={page.pathname === '/Sparkling'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Игристое')}>Игристое</Link></div>
+            <div className={page.pathname === '/Whisky'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/Whisky' className={page.pathname === '/Whisky'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Виски')}>Виски</Link></div>
+            <div className={page.pathname === '/Brandy'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/Brandy' className={page.pathname === '/Brandy'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Коньяк')}>Коньяк</Link></div>
+            <div className={page.pathname === '/Armagnac'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/Armagnac' className={page.pathname === '/Armagnac'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Арманьяк')}>Арманьяк</Link></div>
+            <div className={page.pathname === '/Rum'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/Rum' className={page.pathname === '/Rum'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Ром')}>Ром</Link></div>
+            <div className={page.pathname === '/Vodka'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/Vodka' className={page.pathname === '/Vodka'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Водка')}>Водка</Link></div>
+            <div className={page.pathname === '/Liquor'? 'nav-bar-bg':'nav-bar-noBg'}><Link to='/Liquor' className={page.pathname === '/Liquor'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Ликер')}>Ликер</Link></div>
+            <div className={page.pathname === '/Cocktails'? 'nav-bar-bg':'nav-bar-noBg'}><Link  to='/Cocktails'className={page.pathname === '/Cocktails'? 'nav-bar-true':'nav-bar-false'} onClick={()=>setDrink('Коктейли')}>Коктейли</Link></div>
             </div>
+
+
 
             <div className='space2'></div>
         </nav>

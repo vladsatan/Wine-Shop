@@ -2,17 +2,13 @@ import '../App.css';
 import React, {useEffect, useState} from "react";
 import Slider from "../Components/Slider/Slider";
 import ArticleCards from "../Components/Article-cards/ArticleCards";
-import AboutSommelier from "../Components/AboutSommelier/AboutSommelier";
-import MailingList from "../Components/ MailingList/ MailingList";
-import Footer from "../Components/Footer/Footer";
+import AboutSommelier from "../Components/AboutSommelier/AboutSommelier";;
 import Filter from "../Components/Filters/Filter";
 import ProductCard from "../Components/ProductCard/ProductCard";
 import Line from "../img/Line.png";
 import {sparkling} from "../bdTest";
 import {getFilterOfOptions} from "../Scripts";
-function Sparkling(props) {
-
-    let {drink} = props
+function Sparkling() {
 
     const [chooseColor, setChooseColor] = useState([])
     const [chooseSweetness, setChooseSweetness] = useState([])
@@ -29,7 +25,8 @@ function Sparkling(props) {
     },[chooseColor,chooseSweetness,choosePrice,chooseCountry,chooseSort,chooseKindOfSparkling])
 
     useEffect(()=>{
-        let arr = []
+        let arr = [];
+
         for(let i = 0; i < filterSparkling.length; i++){
             if(i < limiter){
                 arr.push(filterSparkling[i])
@@ -49,7 +46,7 @@ function Sparkling(props) {
 
                     <div className='filter-side'>
                         <Filter
-                            drink={drink}
+                            drink={'Игристое'}
                             chooseColor={chooseColor}
                             setChooseColor={setChooseColor}
                             chooseSweetness={chooseSweetness}
@@ -81,8 +78,6 @@ function Sparkling(props) {
 
 
                 <AboutSommelier />
-                <MailingList />
-                <Footer />
             </div>
         </div>
     );

@@ -6,14 +6,10 @@ import Filter from "../Components/Filters/Filter";
 import ProductCard from "../Components/ProductCard/ProductCard";
 import Line from "../img/Line.png";
 import AboutSommelier from "../Components/AboutSommelier/AboutSommelier";
-import MailingList from "../Components/ MailingList/ MailingList";
-import Footer from "../Components/Footer/Footer";
 import wines from "../bdTest";
 import {getFilterOfOptions} from "../Scripts";
 
-function Wine(props) {
-
-   let {drink} = props
+function Wine() {
 
    const [chooseColor, setChooseColor] = useState([])
    const [chooseSweetness, setChooseSweetness] = useState([])
@@ -50,7 +46,7 @@ function Wine(props) {
 
                 <div className='filter-side'>
                    <Filter
-                       drink={drink}
+                       drink={'Вино'}
                        chooseColor={chooseColor}
                        setChooseColor={setChooseColor}
                        chooseSweetness={chooseSweetness}
@@ -79,9 +75,8 @@ function Wine(props) {
 
                 </div>
              </div>
+
              <AboutSommelier />
-             <MailingList />
-             <Footer />
 
           </div>
 
